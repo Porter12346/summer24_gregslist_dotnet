@@ -39,32 +39,32 @@ CREATE TABLE houses (
     year SMALLINT UNSIGNED NOT NULL,
     price INT UNSIGNED NOT NULL,
     color VARCHAR(255) NOT NULL,
-    sqft SMALLINT NOT NULL,
+    sqft INT NOT NULL,
     stories SMALLINT NOT NULL,
     imgUrl TEXT NOT NULL,
-    creatorId VARCHAR(255) NOT NULL
-    -- FOREIGN KEY (creatorId) REFERENCES accounts (id) ON DELETE CASCADE
+    creatorId VARCHAR(255) NOT NULL,
+    FOREIGN KEY (creatorId) REFERENCES accounts (id) ON DELETE CASCADE
 );
 
 INSERT INTO
-houses (
-  year,
-  price,
-  color,
-  sqft,
-  stories,
-  imgURL,
-  creatorId
-)
+    houses (
+        year,
+        price,
+        color,
+        sqft,
+        stories,
+        imgURL,
+        creatorId
+    )
 VALUES (
-  2000,
-  10000,
-  "blue",
-  15,
-  2,
-  "https://images.unsplash.com/photo-1720048169707-a32d6dfca0b3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxfHx8ZW58MHx8fHx8",
-  "66bbcb0bd7e728a85d2a5296"
-);
+        2000,
+        10000,
+        "blue",
+        15,
+        2,
+        "https://images.unsplash.com/photo-1720048169707-a32d6dfca0b3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxfHx8ZW58MHx8fHx8",
+        "66bbcb0bd7e728a85d2a5296"
+    );
 
 DROP TABLE houses;
 -- If you need to make big changes to a table, it is easy to just drop and start again

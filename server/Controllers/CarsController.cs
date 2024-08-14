@@ -44,6 +44,7 @@ public class CarsController : ControllerBase
 
   [HttpPost]
   [Authorize]
+  
   public async Task<ActionResult<Car>> CreateCar([FromBody] Car carData)
   {
     try
